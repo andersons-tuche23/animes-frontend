@@ -1,3 +1,11 @@
+import { Fragment } from "react";
+
+import { Banner } from "@/shared/components";
+
 export default function Home() {
-  return <h1>Hello</h1>;
+  return (
+    <Fragment>
+      <Banner />
+    </Fragment>
+  );
 }

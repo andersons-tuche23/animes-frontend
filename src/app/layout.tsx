@@ -28,7 +28,7 @@ export default function RootLayout({
             <div className="flex">
               <Sidebar />
 
-              <main>{children}</main>
+              <main className="main">{children}</main>
             </div>
           </Providers>
         </StyledComponentsRegistry>
