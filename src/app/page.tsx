@@ -1,11 +1,19 @@
 import { Fragment } from "react";
+import { Star } from "lucide-react";
 
-import { Banner } from "@/shared/components";
+import { getTopPopular } from "@/shared/services";
+import { Banner, Title, TopPopular } from "@/shared/components";
 
-export default function Home() {
+export default async function Home() {
+  const popular = await getTopPopular();
+
   return (
-    <Fragment>
+    <>
       <Banner />
-    </Fragment>
+
+      <Title icon={<Star />} title="Mais Populares" />
+
+      <TopPopular data={popular} />
+    </>
   );
 }
