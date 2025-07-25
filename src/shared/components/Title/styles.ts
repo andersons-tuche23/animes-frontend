@@ -22,6 +22,7 @@ export const Icon = styled.div`
 
 export const Text = styled.div`
   display: flex;
+  align-items: center;
   font-size: 3.2rem;
   gap: 1rem;
 

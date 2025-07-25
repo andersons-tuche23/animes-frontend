@@ -1,9 +1,9 @@
 import { BASE_URL } from "../lib";
 import { Item } from "../types";
 
-export async function getTopPopular(): Promise<Item[]> {
+export async function getTopRecommended(): Promise<Item[]> {
   const response = await BASE_URL.get(
-    "/anime?page%5Blimit%5D=6&sort=-popularityRank,popularityRank"
+    "/anime?page%5Blimit%5D=6&sort=-average_rating"
   );
 
   return response.data.data;

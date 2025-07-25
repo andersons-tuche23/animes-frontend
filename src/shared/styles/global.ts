@@ -21,6 +21,10 @@ export const ResetCSS = createGlobalStyle`
         width: calc(100% - 40px);
         margin-left: 60px;
     }
+
+    a {
+      text-decoration: none;
+    }
 `;
 
 const glow = keyframes`
