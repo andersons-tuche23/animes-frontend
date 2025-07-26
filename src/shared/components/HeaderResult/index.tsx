@@ -4,12 +4,19 @@ import { Logo } from "@/shared/components";
 import { useSearch } from "@/shared/hooks";
 
 import * as S from "./styles";
+import { HeaderResultProps } from "./types";
+import { useTheme } from "styled-components";
 
-export const HeaderResult = () => {
+export const HeaderResult = ({ isBackgroundBlack }: HeaderResultProps) => {
+  const { BLACK } = useTheme();
   const { inputText, handleKeyDown, handleInputChange } = useSearch();
 
   return (
-    <S.Wrapper>
+    <S.Wrapper
+      style={{
+        background: isBackgroundBlack ? BLACK : "rgba(0, 0, 0, 0.1)",
+      }}
+    >
       <S.ContainerTop>
         <Logo />
 

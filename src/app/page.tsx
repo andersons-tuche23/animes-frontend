@@ -16,13 +16,13 @@ export default async function Home() {
 
       <C.Title icon={<Star />} title="Mais Populares" />
 
-      <C.TopPopular data={popular} />
+      <C.ListAnimes data={popular} />
 
       <C.Carousel />
 
       <C.Title icon={<ThumbsUp />} title="Mais Bem Classificados" />
 
-      <C.TopPopular data={recommended} />
+      <C.ListAnimes data={recommended} />
 
       <C.Footer />
     </Fragment>

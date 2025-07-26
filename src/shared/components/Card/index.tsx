@@ -27,7 +27,7 @@ export const CardComponent = ({ item }: CardComponentProps) => {
       synopsis={synopsis}
     >
       <div>
-        <Link href={`/sinopes?animeId=${id}`} passHref>
+        <Link href={`/details/${id}`} passHref>
           <Image
             src={posterImage.large}
             alt={canonicalTitle}

@@ -2,7 +2,7 @@ import { Input } from "@/shared/styles";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.BLACK};
+  background-color: rgba(0, 0, 0, 0.1);
   height: 102px;
   width: 100%;
   padding: 2rem;

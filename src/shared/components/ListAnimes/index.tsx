@@ -5,7 +5,7 @@ import { Item } from "@/shared/types";
 
 import { CardComponent } from "../Card";
 
-export const TopPopular = ({ data }: { data: Item[] }) => (
+export const ListAnimes = ({ data }: { data: Item[] }) => (
   <S.Wrapper>
     {data.map((item) => (
       <CardComponent key={item.id} item={item} />

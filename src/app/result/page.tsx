@@ -16,11 +16,11 @@ export default async function Result({ searchParams }: ResultProps) {
 
   return (
     <Fragment>
-      <C.HeaderResult />
+      <C.HeaderResult isBackgroundBlack />
 
       <C.Title icon={<Film />} defaultTitle={title} />
 
-      <C.TopPopular data={response.data} />
+      <C.ListAnimes data={response.data} />
 
       <C.Navigation links={response.links} />
     </Fragment>
