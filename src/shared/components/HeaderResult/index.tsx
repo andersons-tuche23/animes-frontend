@@ -5,7 +5,7 @@ import { useSearch } from "@/shared/hooks";
 
 import * as S from "./styles";
 
-export const Banner = () => {
+export const HeaderResult = () => {
   const { inputText, handleKeyDown, handleInputChange } = useSearch();
 
   return (

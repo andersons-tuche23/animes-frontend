@@ -13,7 +13,7 @@ export const Footer = () => (
         <p>Ainda está procurando algo pra assistir?</p>
         <span>Confira o nosso acervo completo</span>
       </S.TextContainer>
-      <S.ButtonFooter href="/categories">Ver tudo</S.ButtonFooter>
+      <S.ButtonFooter href="/result">Ver tudo</S.ButtonFooter>
     </S.FooterContent>
 
     <S.TextFooter>
