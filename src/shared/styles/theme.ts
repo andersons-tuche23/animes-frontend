@@ -1,6 +1,7 @@
 export const THEME = {
   ORANGE: "#f46d1b",
   GREEN: "#34ac40",
+  BLACK: "#000",
   ESMERALD: "#16a085",
   WHITE: "#fff",
   GREY_100: "rgba(255, 255, 255, 0.5)",

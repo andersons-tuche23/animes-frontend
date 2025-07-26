@@ -5,3 +5,4 @@ export * from "./CustomTooltip";
 export * from "./TopPopular";
 export * from "./Carousel";
 export * from "./Footer";
+export * from "./HeaderCategories";
