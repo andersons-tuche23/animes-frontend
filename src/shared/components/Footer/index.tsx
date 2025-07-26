@@ -1,6 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
 
@@ -10,7 +9,7 @@ export function Footer() {
   return (
     <S.Wrapper>
       <S.FooterContent>
-        <img src="/yuzu.png" alt="" />
+        <Image src="/yuzu.png" alt="" width={249} height={94} />
         <S.TextContainer>
           <p>Ainda está procurando algo pra assistir?</p>
           <span>Confira o nosso acervo completo</span>

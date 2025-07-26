@@ -25,6 +25,7 @@ export const Text = styled.div`
   align-items: center;
   font-size: 3.2rem;
   gap: 1rem;
+  flex-wrap: wrap;
 
   strong {
     color: ${({ theme }) => theme.ORANGE};

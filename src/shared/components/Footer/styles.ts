@@ -32,6 +32,10 @@ export const TextContainer = styled.div`
   span {
     color: #34ac40;
   }
+
+  @media (max-width: 640px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const ButtonFooter = styled(Link)`
@@ -55,9 +59,22 @@ export const TextFooter = styled.div`
     margin-left: 6rem;
     color: #fff;
   }
+
   img {
     filter: brightness(0) saturate(100%) invert(100%);
     height: 70px;
     width: 70px;
+  }
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+    font-size: 1.4rem;
+
+    p {
+      margin-left: 0;
+    }
   }
 `;

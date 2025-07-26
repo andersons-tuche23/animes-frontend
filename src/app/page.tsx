@@ -1,14 +1,8 @@
 import { Fragment } from "react";
 import { Star, ThumbsUp } from "lucide-react";
 
+import * as C from "@/shared/components";
 import { getTopPopular, getTopRecommended } from "@/shared/services";
-import {
-  Banner,
-  Carousel,
-  Footer,
-  Title,
-  TopPopular,
-} from "@/shared/components";
 
 export default async function Home() {
   const [popular, recommended] = await Promise.all([
@@ -18,19 +12,19 @@ export default async function Home() {
 
   return (
     <Fragment>
-      <Banner />
+      <C.Banner />
 
-      <Title icon={<Star />} title="Mais Populares" />
+      <C.Title icon={<Star />} title="Mais Populares" />
 
-      <TopPopular data={popular} />
+      <C.TopPopular data={popular} />
 
-      <Carousel />
+      <C.Carousel />
 
-      <Title icon={<ThumbsUp />} title="Mais Bem Classificados" />
+      <C.Title icon={<ThumbsUp />} title="Mais Bem Classificados" />
 
-      <TopPopular data={recommended} />
+      <C.TopPopular data={recommended} />
 
-      <Footer />
+      <C.Footer />
     </Fragment>
   );
 }
