@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { ChangeEvent, KeyboardEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 export function useSearch() {
   const [inputText, setInputText] = useState("");
@@ -13,10 +13,10 @@ export function useSearch() {
     setInputText(e.target.value);
   };
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      router.push(`/result?view=${encodeURIComponent(inputText)}`);
-    }
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
+    router.push(`/result?view=${encodeURIComponent(inputText)}`);
   };
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export function useSearch() {
 
   return {
     inputText,
-    handleKeyDown,
+    handleSubmit,
     handleInputChange,
   };
 }

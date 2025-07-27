@@ -3,6 +3,7 @@ import { Film } from "lucide-react";
 
 import * as C from "@/shared/components";
 import { getAllAnimes } from "@/shared/services";
+import { Wrapper } from "@/shared/styles";
 
 type ResultProps = {
   searchParams: { offset?: string; view?: string };
@@ -18,11 +19,13 @@ export default async function Result({ searchParams }: ResultProps) {
     <Fragment>
       <C.HeaderResult isBackgroundBlack />
 
-      <C.Title icon={<Film />} defaultTitle={title} />
+      <Wrapper>
+        <C.Title icon={<Film />} defaultTitle={title} />
 
-      <C.ListAnimes data={response.data} />
+        <C.ListAnimes data={response.data} />
 
-      <C.Navigation links={response.links} />
+        <C.Navigation links={response.links} />
+      </Wrapper>
     </Fragment>
   );
 }

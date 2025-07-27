@@ -1,26 +1,21 @@
 "use client";
 
 import { List, Menu } from "lucide-react";
-import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 
 import { useClickOutside, useGetCategories } from "@/shared/hooks";
 
 import * as S from "./styles";
+import Link from "next/link";
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const sidebarRef = useRef<HTMLDivElement | null>(null);
 
-  const router = useRouter();
   const { data: categories = [] } = useGetCategories();
 
   const toggleSidebar = () => setIsOpen(!isOpen);
-
-  const handleCategoryClick = (categoryTitle: string) => {
-    router.push(`/categories?view=${encodeURIComponent(categoryTitle)}`);
-  };
 
   useClickOutside(sidebarRef, setIsOpen);
 
@@ -46,6 +41,7 @@ export function Sidebar() {
           <S.StyledFaTimes onClick={toggleSidebar} />
         </S.MenuContainer>
       )}
+
       <S.SidebarContent
         style={{
           display: isOpen ? "flex" : "none",
@@ -53,12 +49,15 @@ export function Sidebar() {
       >
         <S.MenuLinks>
           {categories.map((category) => (
-            <p
+            <Link
               key={category.id}
-              onClick={() => handleCategoryClick(category.attributes.title)}
+              href={`/result?view=${encodeURIComponent(
+                category.attributes.title
+              )}`}
+              onClick={toggleSidebar}
             >
               {category.attributes.title}
-            </p>
+            </Link>
           ))}
         </S.MenuLinks>
       </S.SidebarContent>

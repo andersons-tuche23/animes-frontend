@@ -1,5 +1,5 @@
-import { Input } from "@/shared/styles";
 import styled from "styled-components";
+import { Input } from "../Input";
 
 export const Wrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
@@ -20,7 +20,7 @@ export const ContainerTop = styled.div`
 `;
 
 export const InputDesktop = styled(Input)`
-  display: block;
+  display: flex;
 
   @media (max-width: 768px) {
     display: none;
@@ -31,7 +31,7 @@ export const InputMobile = styled(Input)`
   display: none;
 
   @media (max-width: 768px) {
-    display: block;
+    display: flex;
     width: 80%;
     position: absolute;
     bottom: 2rem;

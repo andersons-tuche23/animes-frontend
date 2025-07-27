@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-left: 2rem;
   margin-top: 4rem;
 
   @media (max-width: 1080px) {

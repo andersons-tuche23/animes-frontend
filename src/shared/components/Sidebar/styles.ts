@@ -2,11 +2,10 @@ import { X } from "lucide-react";
 import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
-  background-color: #f46d1b;
-  color: #fff;
+  background-color: ${({ theme }) => theme.ORANGE};
+  color: ${({ theme }) => theme.WHITE};
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
   position: fixed;
   transition: all 0.3s ease-in-out;
   z-index: 1;
@@ -14,7 +13,7 @@ export const SidebarContainer = styled.div`
   top: 0;
   bottom: 0;
   height: 100%;
-  padding: 1rem;
+  padding: 2rem;
 `;
 
 export const MenuIcon = styled.div`
@@ -45,18 +44,21 @@ export const MenuLinks = styled.div`
   display: flex;
   align-items: baseline;
   flex-direction: column;
-  margin-right: 7rem;
-  margin-top: 1rem;
+  margin: 2rem 0;
   gap: 7px;
+  height: 55%;
+  overflow-y: scroll;
+  width: 100%;
 
-  p {
+  a {
+    width: 100%;
     font-size: 1.6rem;
-    cursor: pointer;
-    transition: transform ease-in 0.2s;
+    ${({ theme }) => theme.WHITE}
+    padding: 8px 0;
+  }
 
-    &:hover {
-      transform: scale(1.2);
-    }
+  @media (max-width: 640px) {
+    height: 50%;
   }
 `;
 
@@ -66,12 +68,13 @@ export const TextMenu = styled.div`
   width: 100%;
 
   span {
-    font-size: 2.6rem;
+    font-size: 2rem;
   }
 `;
 
 export const SidebarContent = styled.div`
   transition: display 0.3s ease-in-out;
+  width: 100%;
 `;
 
 export const SidebarItem = styled.div`

@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   justify-content: flex-end;
   margin-top: 1rem;
   margin-bottom: 4rem;
-  margin-right: 2rem;
 
   button {
     background-color: ${({ theme }) => theme.ORANGE};
@@ -22,9 +21,5 @@ export const Wrapper = styled.div`
   button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-  }
-
-  @media (max-width: 640px) {
-    margin-right: 4rem;
   }
 `;

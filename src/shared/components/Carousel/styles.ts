@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CarouselContainer = styled.div`
   position: relative;
-  width: calc(100% - 45px);
+  width: 100%;
   height: 250px;
   margin: 2rem auto;
   overflow: hidden;

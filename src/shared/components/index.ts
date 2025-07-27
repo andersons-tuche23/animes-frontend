@@ -12,3 +12,4 @@ export * from "./Logo";
 export * from "./Loading";
 export * from "./SidebarDetail";
 export * from "./Video";
+export * from "./Input";
