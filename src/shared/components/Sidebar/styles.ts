@@ -6,14 +6,18 @@ export const SidebarContainer = styled.div`
   color: ${({ theme }) => theme.WHITE};
   display: flex;
   flex-direction: column;
-  position: fixed;
   transition: all 0.3s ease-in-out;
   z-index: 1;
   left: 0;
   top: 0;
+  position: fixed;
   bottom: 0;
   height: 100%;
   padding: 2rem;
+
+  @media (max-width: 640px) {
+    position: absolute;
+  }
 `;
 
 export const MenuIcon = styled.div`

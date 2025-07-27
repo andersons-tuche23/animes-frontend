@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Wrapper } from "./styles";
 
 export const Logo = () => (
-  <Link href="/">
+  <Wrapper href="/">
     <Image src="/animesHome.png" alt="Logo" width={200} height={49} />
-  </Link>
+  </Wrapper>
 );

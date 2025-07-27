@@ -16,10 +16,6 @@ export const FooterContent = styled.div`
   img {
     transform: translateY(-29px);
   }
-
-  @media (max-width: 640px) {
-    padding-left: 8rem;
-  }
 `;
 
 export const TextContainer = styled.div`
@@ -53,7 +49,7 @@ export const ButtonFooter = styled(Link)`
 export const TextFooter = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   align-items: center;
   font-size: 1.6rem;
 
@@ -75,7 +71,6 @@ export const TextFooter = styled.div`
     text-align: center;
     width: 100%;
     font-size: 1.4rem;
-    padding-left: 8rem;
 
     p {
       width: 70%;

@@ -13,15 +13,6 @@ export const ResetCSS = createGlobalStyle`
         font-size: 62.5%;
     }
 
-    .flex {
-        display: flex;
-    }
-
-    .main {
-        width: calc(100% - 40px);
-        margin-left: 60px;
-    }
-
     a {
       text-decoration: none;
       color: inherit;
