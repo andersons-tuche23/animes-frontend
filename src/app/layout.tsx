@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { Sidebar } from "@/shared/components";
+import { Footer, Sidebar } from "@/shared/components";
 import { Providers } from "@/shared/providers";
 import { StyledComponentsRegistry } from "@/shared/lib";
 
@@ -30,6 +30,7 @@ export default function RootLayout({
 
               <main className="main">{children}</main>
             </div>
+            <Footer />
           </Providers>
         </StyledComponentsRegistry>
       </body>

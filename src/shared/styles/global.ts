@@ -25,6 +25,13 @@ export const ResetCSS = createGlobalStyle`
     a {
       text-decoration: none;
     }
+
+    button {
+      cursor: pointer;
+      border: none;
+    }
+
+
 `;
 
 const glow = keyframes`

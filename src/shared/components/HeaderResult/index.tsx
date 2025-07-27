@@ -14,7 +14,7 @@ export const HeaderResult = ({ isBackgroundBlack }: HeaderResultProps) => {
   return (
     <S.Wrapper
       style={{
-        background: isBackgroundBlack ? BLACK : "rgba(0, 0, 0, 0.1)",
+        background: isBackgroundBlack ? BLACK : "rgba(0, 0, 0, 0.8)",
       }}
     >
       <S.ContainerTop>

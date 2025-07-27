@@ -23,8 +23,6 @@ export default async function Home() {
       <C.Title icon={<ThumbsUp />} title="Mais Bem Classificados" />
 
       <C.ListAnimes data={recommended} />
-
-      <C.Footer />
     </Fragment>
   );
 }

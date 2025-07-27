@@ -2,9 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-image: url(${"./footer.png"});
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #222;
   width: 100%;
   margin-top: 10rem;
 `;
@@ -17,6 +15,10 @@ export const FooterContent = styled.div`
 
   img {
     transform: translateY(-29px);
+  }
+
+  @media (max-width: 640px) {
+    padding-left: 8rem;
   }
 `;
 
@@ -56,7 +58,7 @@ export const TextFooter = styled.div`
   font-size: 1.6rem;
 
   p {
-    margin-left: 6rem;
+    margin-left: 8rem;
     color: #fff;
   }
 
@@ -68,12 +70,15 @@ export const TextFooter = styled.div`
 
   @media (max-width: 640px) {
     flex-direction: column;
+    justify-content: center;
     margin-top: 2rem;
     text-align: center;
     width: 100%;
     font-size: 1.4rem;
+    padding-left: 8rem;
 
     p {
+      width: 70%;
       margin-left: 0;
     }
   }

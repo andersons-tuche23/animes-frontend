@@ -1,4 +1,4 @@
-import { Item } from "../types";
+import { Anime, Item } from "../types";
 import { BASE_URL } from "../lib";
 
 export interface Link {
@@ -28,6 +28,12 @@ export async function getAllAnimes(
   params.append("page[limit]", limit.toString());
   params.append("page[offset]", offset);
 
-  const response = await BASE_URL(`/anime?${params.toString()}`);
+  const response = await BASE_URL.get(`/anime?${params.toString()}`);
   return response.data;
+}
+
+export async function getAnimeById(id: string): Promise<Anime> {
+  const response = await BASE_URL.get(`/anime/${id}`);
+
+  return response.data.data;
 }
