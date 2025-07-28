@@ -7,31 +7,20 @@ import { useClickOutside, useGetCategories } from "@/shared/hooks";
 
 import * as S from "./styles";
 import Link from "next/link";
-import { useTheme } from "styled-components";
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const sidebarRef = useRef<HTMLDivElement | null>(null);
 
-  const { ORANGE } = useTheme();
   const { data: categories = [] } = useGetCategories();
 
   const toggleSidebar = () => setIsOpen(!isOpen);
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
   useClickOutside(sidebarRef, setIsOpen);
 
   return (
-    <S.SidebarContainer
-      ref={sidebarRef}
-      style={{
-        width: isOpen ? "267px" : "70px",
-        alignItems: isOpen ? "flex-start" : "center",
-        position: isMobile ? (isOpen ? "fixed" : "absolute") : "fixed",
-        backgroundColor: isMobile ? (isOpen ? ORANGE : "transparent") : ORANGE,
-      }}
-    >
+    <S.SidebarContainer ref={sidebarRef} open={isOpen}>
       {!isOpen ? (
         <S.MenuIcon onClick={toggleSidebar}>
           <Menu />

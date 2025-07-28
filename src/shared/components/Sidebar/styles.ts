@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 import styled from "styled-components";
 
-export const SidebarContainer = styled.div`
+export const SidebarContainer = styled.div<{ open: boolean }>`
   background-color: ${({ theme }) => theme.ORANGE};
   color: ${({ theme }) => theme.WHITE};
   display: flex;
@@ -15,8 +15,13 @@ export const SidebarContainer = styled.div`
   height: 100%;
   padding: 2rem;
 
+  width: ${({ open }) => (open ? "267px" : "70px")};
+  align-items: ${({ open }) => (open ? "flex-start" : "center")};
+
   @media (max-width: 640px) {
     position: absolute;
+    background-color: ${({ theme, open }) =>
+      open ? theme.ORANGE : "transparent"};
   }
 `;
 
