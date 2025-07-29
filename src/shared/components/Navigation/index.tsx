@@ -25,9 +25,17 @@ export const Navigation = ({ links }: NavigationProps) => {
     }
   };
 
+  const prevOffsetRaw = links?.prev ? getOffsetFromUrl(links.prev) : undefined;
+
+  const prevOffset =
+    prevOffsetRaw !== undefined ? Number(prevOffsetRaw) : undefined;
+
   return (
     <Wrapper>
-      <button onClick={handlePrevPage} disabled={!links?.prev}>
+      <button
+        onClick={handlePrevPage}
+        disabled={!links?.prev || prevOffset === 0}
+      >
         <ArrowLeft size={20} />
       </button>
       <button onClick={handleNextPage} disabled={!links?.next}>

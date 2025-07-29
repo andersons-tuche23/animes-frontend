@@ -15,7 +15,7 @@ interface GetAllAnimesOutput {
 
 export async function getAllAnimes(
   searchText?: string,
-  offset = "0",
+  offset = "20",
   limit = 20
 ): Promise<GetAllAnimesOutput> {
   const params = new URLSearchParams();

@@ -2,8 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import * as S from "./styles";
+import Link from "next/link";
 
-const images = ["./banner4.png", "./banner3.png", "./banner2.png"];
+const carousel = [
+  { img: "./banner4.png", anime: "naruto" },
+  { img: "./banner3.png", anime: "one piece" },
+  { img: "./banner2.png", anime: "dragon ball" },
+];
 
 export function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,7 +16,7 @@ export function Carousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        prevIndex === carousel.length - 1 ? 0 : prevIndex + 1
       );
     }, 3000);
 
@@ -25,20 +30,26 @@ export function Carousel() {
   return (
     <S.CarouselContainer>
       <S.CarouselWrapper>
-        {images.map((image, index) => (
-          <S.CarouselSlide
+        {carousel.map((item, index) => (
+          <Link
+            href={`/result?view=${encodeURIComponent(item.anime)}`}
             key={index}
-            style={{
-              opacity: index === currentIndex ? 1 : 0,
-              display: index === currentIndex ? "block" : "none",
-            }}
+            passHref
           >
-            <S.CarouselImage src={image} alt={`Slide ${index + 1}`} />
-          </S.CarouselSlide>
+            <S.CarouselSlide
+              key={index}
+              style={{
+                opacity: index === currentIndex ? 1 : 0,
+                display: index === currentIndex ? "block" : "none",
+              }}
+            >
+              <S.CarouselImage src={item.img} alt={`Slide ${index + 1}`} />
+            </S.CarouselSlide>
+          </Link>
         ))}
       </S.CarouselWrapper>
       <S.DotContainer>
-        {images.map((_, index) => (
+        {carousel.map((_, index) => (
           <S.Dot
             key={index}
             onClick={() => goToSlide(index)}
