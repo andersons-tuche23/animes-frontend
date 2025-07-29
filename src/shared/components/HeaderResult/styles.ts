@@ -23,19 +23,23 @@ export const InputDesktop = styled(Input)`
   display: flex;
 
   @media (max-width: 768px) {
-    display: none;
+    display: none !important;
   }
 `;
 
 export const InputMobile = styled(Input)`
-  display: none;
+  display: none !important;
 
   @media (max-width: 768px) {
-    display: flex;
+    display: flex !important;
     width: 80%;
     position: absolute;
-    bottom: 2rem;
+    bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  @media (max-width: 641px) {
+    bottom: 4rem;
   }
 `;

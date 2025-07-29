@@ -19,7 +19,7 @@ export const SidebarContainer = styled.div<{ open: boolean }>`
   align-items: ${({ open }) => (open ? "flex-start" : "center")};
 
   @media (max-width: 640px) {
-    position: absolute;
+    position: ${({ open }) => (open ? "fixed" : "absolute")};
     background-color: ${({ theme, open }) =>
       open ? theme.ORANGE : "transparent"};
   }
@@ -55,7 +55,7 @@ export const MenuLinks = styled.div`
   flex-direction: column;
   margin: 2rem 0;
   gap: 7px;
-  height: 55%;
+  height: 65%;
   overflow-y: scroll;
   width: 100%;
 
@@ -66,9 +66,23 @@ export const MenuLinks = styled.div`
     padding: 8px 0;
   }
 
-  @media (max-width: 640px) {
-    height: 50%;
+  &::-webkit-scrollbar {
+    width: 6px;
   }
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
 `;
 
 export const TextMenu = styled.div`
